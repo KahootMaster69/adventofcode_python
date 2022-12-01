@@ -1,16 +1,17 @@
-# This is a sample Python script.
+def main():
+    with open("input_01") as file:
+        current_sum = 0
+        max_sum = 0
+        for line in file.readlines():
+            line = line[:-1]
+            if not line:
+                max_sum = max(current_sum, max_sum)
+                current_sum = 0
+            else:
+                current_sum += int(line)
 
-# Press Umschalt+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+    print(max_sum)
 
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Strg+F8 to toggle the breakpoint.
-
-
-# Press the green button in the gutter to run the script.
 if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+    main()
