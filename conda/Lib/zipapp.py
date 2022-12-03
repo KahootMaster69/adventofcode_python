@@ -194,11 +194,11 @@ def main(args=None):
         if args.output is None or (os.path.exists(args.output) and
                                    os.path.samefile(args.source, args.output)):
             raise SystemExit("In-place editing of archives is not supported")
-        if args.main:
+        if args.main_p1:
             raise SystemExit("Cannot change the main function when copying")
 
     create_archive(args.source, args.output,
-                   interpreter=args.python, main=args.main,
+                   interpreter=args.python, main=args.main_p1,
                    compressed=args.compress)
 
 

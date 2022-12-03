@@ -352,7 +352,7 @@ class DemoWindow(object):
         self.state = RUNNING
 
         try:
-            result = self.module.main()
+            result = self.module.main_p1()
             if result == "EVENTLOOP":
                 self.state = EVENTDRIVEN
             else:
